@@ -318,10 +318,10 @@ spec:
     ...
     settings:
     # Route internal K8s and local home traffic in to the defaullt K8S gateway
-    - NOT_ROUTED_TO_GATEWAY_CIDRS: "172.22.0.0/12 <loca home network CIDR>"
-    - VPN_LOCAL_CIDRS: "172.22.0.0/12 <local home network CIDR>"
+    NOT_ROUTED_TO_GATEWAY_CIDRS: "172.22.0.0/12 <local home network CIDR>"
+    VPN_LOCAL_CIDRS: "172.22.0.0/12 <local home network CIDR>"
     # Use a different VXLAN network segment that does not conflict with the above
-    - VXLAN_IP_NETWORK: "192.168.242.0/24"
+    VXLAN_IP_NETWORK: "192.168.242.0/24"
 ```
 
 ## How to debug
