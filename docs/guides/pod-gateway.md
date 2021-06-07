@@ -239,16 +239,16 @@ spec:
                 # Allow traffic within K8S - change if your K8S cluster uses a different CIDR
               - ipBlock:
                   cidr: 10.0.0.0/8
-      settings:
-        # tun0 for openvpn, wg0 for wireguard
-        VPN_INTERFACE: tun0
-        # Prevent non VPN traffic to leave the gateway
-        VPN_BLOCK_OTHER_TRAFFIC: true
-        # If VPN_BLOCK_OTHER_TRAFFIC is true, allow VPN traffic over this port
-        VPN_TRAFFIC_PORT: 443
-        # Traffic to these IPs will be send through the K8S gateway
-        # change if your K8S cluster or home network uses a different CIDR
-        VPN_LOCAL_CIDRS: "10.0.0.0/8 192.168.0.0/16"
+    settings:
+      # tun0 for openvpn, wg0 for wireguard
+      VPN_INTERFACE: tun0
+      # Prevent non VPN traffic to leave the gateway
+      VPN_BLOCK_OTHER_TRAFFIC: true
+      # If VPN_BLOCK_OTHER_TRAFFIC is true, allow VPN traffic over this port
+      VPN_TRAFFIC_PORT: 443
+      # Traffic to these IPs will be send through the K8S gateway
+      # change if your K8S cluster or home network uses a different CIDR
+      VPN_LOCAL_CIDRS: "10.0.0.0/8 192.168.0.0/16"
 ```
 
 ### Exposing routed pod ports from the gateway
