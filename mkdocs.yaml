@@ -111,6 +111,7 @@ nav:
   - Our Helm Charts:
       - Introduction: our-helm-charts/introduction.md
       - Common: our-helm-charts/common-library.md
+      - Common Storage: our-helm-charts/common-library-storage.md
       - Common Add-ons: our-helm-charts/common-library-add-ons.md
       - Development:
           - Creating a new chart: our-helm-charts/development/creating-a-new-chart.md
