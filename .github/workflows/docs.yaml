@@ -15,9 +15,6 @@ on: # yamllint disable-line rule:truthy
     - 'mkdocs.yaml'
     - 'docs/**'
 
-env:
-  MKDOCS_MATERIAL_INSIDER_TOKEN: ${{ secrets.MKDOCS_MATERIAL_INSIDER_TOKEN }}
-
 jobs:
   deploy:
     runs-on: ubuntu-20.04
@@ -29,25 +26,22 @@ jobs:
         with:
           app_id: ${{ secrets.K8S_AT_HOME_APP_ID }}
           private_key: ${{ secrets.K8S_AT_HOME_APP_PRIVATE_KEY }}
-
       - name: Checkout
         uses: actions/checkout@v2
         with:
           token: ${{ steps.get-app-token.outputs.token }}
-
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-
       - name: Configure Git
         run: |
           git config user.name "k8s-at-home[bot]"
           git config user.email "k8s-at-home[bot]@users.noreply.github.com"
-
-      - run: pip install git+https://${MKDOCS_MATERIAL_INSIDER_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git
       - run: |
           pip install \
+            mkdocs>=1.1 \
+            mkdocs-macros-plugin >=0.5 \
+            mkdocs-material >=1.0 \
             mkdocs-minify-plugin>=0.3 \
             mkdocs-redirects>=1.0
       - run: mkdocs gh-deploy --config-file ./mkdocs.yaml --force
-      - run: mkdocs --version
