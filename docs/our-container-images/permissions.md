@@ -76,14 +76,14 @@ data.
 <!-- markdownlint-disable-next-line MD046 -->
 ```yaml
 initContainers:
-- name: update-volume-permission
-  image: busybox
-  command: ["sh", "-c", "chown -R 568:568 /config"]
-  volumeMounts:
-  - name: config
-    mountPath: /config
-  securityContext:
-    runAsUser: 0
+  update-volume-permission:
+    image: busybox
+    command: ["sh", "-c", "chown -R 568:568 /config"]
+    volumeMounts:
+    - name: config
+      mountPath: /config
+    securityContext:
+      runAsUser: 0
 ```
 
 ### Direct volume method
