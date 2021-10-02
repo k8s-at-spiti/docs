@@ -45,11 +45,10 @@ To prevent issues with long start-up times using this method,
 you can specify `fsGroupChangePolicy` with one of the following:
 
 * `Always`
-  * Instructs Kubernetes to `chown` the volume each time the pod starts
+    * Instructs Kubernetes to `chown` the volume each time the pod starts
 * `OnRootMismatch`
-  * Instructs Kubernetes to `chown` the volume only if the
-  permissions on the root of the volume do not already match
-  * This is typically much faster than `Always`
+    * Instructs Kubernetes to `chown` the volume only if the permissions on the root of the volume do not already match
+    * This is typically much faster than `Always`
 
 !!! note
     This is an alpha feature in Kubernetes 1.18-1.19, and must be
