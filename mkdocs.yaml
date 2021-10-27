@@ -56,7 +56,7 @@ plugins:
       minify_html: true
   - redirects:
       redirect_maps:
-        our-helm-charts/introduction.md: our-helm-charts/getting-started.md
+        our-helm-charts/getting-started.md: our-helm-charts/introduction.md
 
 # Customization
 extra:
