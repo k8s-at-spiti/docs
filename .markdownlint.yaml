@@ -1,5 +1,8 @@
 ---
 # https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+# MD007/ul-indent - Unordered list indentation
+MD007:
+  indent: 4
 # MD013/line-length - Line length
 MD013:
   code_blocks: false

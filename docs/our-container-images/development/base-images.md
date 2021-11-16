@@ -41,8 +41,10 @@ The base images use the [Tini][tini] init in order to create the smallest
 image possible while still waiting for a child to exit all the while
 reaping zombies and performing signal forwarding.
 
-[ubuntu]: https://github.com/orgs/k8s-at-home/packages/container/package/ubuntu
-[alpine]: https://github.com/orgs/k8s-at-home/packages/container/package/alpine
+<!-- markdown-link-check-disable -->
+[ubuntu]: https://github.com/k8s-at-home/container-images/pkgs/container/ubuntu
+[alpine]: https://github.com/k8s-at-home/container-images/pkgs/container/alpine
+<!-- markdown-link-check-enable -->
 [here]: https://github.com/k8s-at-home/container-images/tree/main/base
 [tini]: https://github.com/krallin/tini/
 [entrypoint.sh]: ./creating-a-new-container-image.md#entrypointsh

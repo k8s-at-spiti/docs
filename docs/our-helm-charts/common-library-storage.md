@@ -133,6 +133,58 @@ persistence:
 
 This will mount the `/dev` folder from the underlying host to `/dev` in the container.
 
+### configMap
+
+In order to mount a configMap to a mount point within the Pod you can use the
+`configMap` type persistence item.
+
+| Field           | Mandatory | Docs / Description                                                                                                    |
+| --------------- | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| `enabled`       | Yes       |                                                                                                                       |
+| `type`          | Yes       |                                                                                                                       |
+| `name`          | Yes       | Which configMap should be mounted. Supports Helm templating.                                                          |
+| `defaultMode`   | No        | The default file access permission bit.                                                                               |
+| `items`         | No        | Specify item-specific configuration. Will be passed 1:1 to the volumeSpec.                                            |
+| `readOnly`      | No        | Explicitly specify if the volume should be mounted read-only. Even if not specified, the configMap will be read-only. |
+
+Minimal config:
+
+```yaml
+persistence:
+  config:
+    enabled: true
+    type: configMap
+    name: mySettings
+```
+
+This will mount the contents of the pre-existing `mySettings` configMap to `/config`.
+
+### Secret
+
+In order to mount a Secret to a mount point within the Pod you can use the
+`secret` type persistence item.
+
+| Field           | Mandatory | Docs / Description                                                                                                 |
+| --------------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
+| `enabled`       | Yes       |                                                                                                                    |
+| `type`          | Yes       |                                                                                                                    |
+| `name`          | Yes       | Which Secret should be mounted. Supports Helm templating.                                                          |
+| `defaultMode`   | No        | The default file access permission bit.                                                                            |
+| `items`         | No        | Specify item-specific configuration. Will be passed 1:1 to the volumeSpec.                                         |
+| `readOnly`      | No        | Explicitly specify if the volume should be mounted read-only. Even if not specified, the Secret will be read-only. |
+
+Minimal config:
+
+```yaml
+persistence:
+  config:
+    enabled: true
+    type: secret
+    name: mySecret
+```
+
+This will mount the contents of the pre-existing `mySecret` Secret to `/config`.
+
 ### Custom
 
 When you wish to specify a custom volume, you can use the `custom` type.
@@ -151,38 +203,6 @@ for more information.
 | `nameOverride`  | No        | Override the name suffix that is used for this volume.                                |
 
 #### Examples
-
-##### configMap
-
-Minimal config:
-
-```yaml
-persistence:
-  config:
-    enabled: true
-    type: custom
-    volumeSpec:
-      configMap:
-        name: mySettings
-```
-
-This will mount the contents of the pre-existing `mySettings` configMap to `/config`.
-
-##### Secret
-
-Minimal config:
-
-```yaml
-persistence:
-  config:
-    enabled: true
-    type: custom
-    volumeSpec:
-      secret:
-        secretName: mySecret
-```
-
-This will mount the contents of the pre-existing `mySecret` Secret to `/config`.
 
 ##### NFS Volume
 

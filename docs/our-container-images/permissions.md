@@ -47,7 +47,8 @@ you can specify `fsGroupChangePolicy` with one of the following:
 * `Always`
     * Instructs Kubernetes to `chown` the volume each time the pod starts
 * `OnRootMismatch`
-    * Instructs Kubernetes to `chown` the volume only if the permissions on the root of the volume do not already match
+    * Instructs Kubernetes to `chown` the volume only if the permissions on the
+      root of the volume do not already match
     * This is typically much faster than `Always`
 
 !!! note
