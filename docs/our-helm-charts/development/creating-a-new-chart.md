@@ -12,8 +12,11 @@ a few tools you will need.
 
 ## Prerequisites
 
-If you wish to use the `task` commands to create a new chart from the template, you need to make sure that [Task](https://taskfile.dev) is installed.
-Please see the [project docs](https://taskfile.dev/#/installation) for more information on how to install it.
+If you wish to use the `task` commands to create a new chart from the template,
+you need to make sure that [Task](https://taskfile.dev) is installed.
+
+Please see the [project docs](https://taskfile.dev/#/installation) for
+more information on how to install it.
 
 ## Creating a new chart
 
