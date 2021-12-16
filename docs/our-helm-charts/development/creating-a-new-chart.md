@@ -7,27 +7,28 @@ a few tools you will need.
 
 - [helm](https://helm.sh/docs/intro/install/)
 - [helm-docs](https://github.com/norwoodj/helm-docs)
-- [task](https://github.com/go-task/task) (optional)
+- [Task](https://taskfile.dev) (optional)
 - [pre-commmit](https://pre-commit.com) (optional - required with tasks)
+
+## Prerequisites
+
+If you wish to use the `task` commands to create a new chart from the template, you need to make sure that [Task](https://taskfile.dev) is installed.
+Please see the [project docs](https://taskfile.dev/#/installation) for more information on how to install it.
 
 ## Creating a new chart
 
 To create a new chart, run the following:
 
 ```sh
-# Clone
-git clone
+git clone https://github.com/k8s-at-home/charts.git
 cd charts
-sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b .bin
 
-# Create chart
-PATH=$PATH:$PWD/.bin
 task deps:install
 task chart:create CHART_TYPE=incubator CHART=chart-name
 # Don't forgot edit some chart informations in charts/incubator/chart-name/Chart.yaml and charts/chart-name/values.yaml
 ```
 
-Second, be sure to checkout the many charts that already use this like
+Second, be sure to checkout the many charts that already use the common library like
 [qBittorrent](https://github.com/k8s-at-home/charts/tree/master/charts/stable/qbittorrent),
 [node-red](https://github.com/k8s-at-home/charts/tree/master/charts/stable/node-red)
 or the many others in this repository.
@@ -39,7 +40,7 @@ You will see which charts include this common chart as dependency:
 ...
 dependencies:
 - name: common
-  version: 3.2.0 # make sure to use the latest common library version available
+  version: 4.2.0 # make sure to use the latest common library version available
   repository: https://library-charts.k8s-at-home.com
 ...
 ```
