@@ -43,6 +43,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: vpn-gateway
+  namespace: default
   labels:
 spec:
   interval: 5m
@@ -85,6 +86,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: terminal
+  namespace: vpn
   labels:
     app: terminal
 spec:
@@ -353,6 +355,18 @@ From the gateway and routed pods check you can ping the following:
        - VPN_LOCAL_CIDRS - it must include the K8S and local home CIDRs
 6. a hostname
    - if this fails, there is problem with the DNS resolution. More debugging is needed
+
+### Routed Pod Fails to init
+
+1. If the test pod/terminal pod fails to get passed the init container, check
+   the logs from the init container
+   - `kubectl -n vpn logs terminal-xdfexampleaex-pvfpc gateway-init`
+   - If you see `+ GATEWAY_IP=';; connection timed out; no servers could be reached'`,
+     try setting the `NOT_ROUTED_TO_GATEWAY_CIDRS:` with your cluster cidr and service
+     cidrs.
+   - For example, if you're running k3s with the
+     [default flannel install](https://rancher.com/docs/k3s/latest/en/installation/install-options/server-config/#networking),
+     it will be `NOT_ROUTED_TO_GATEWAY_CIDRS: "10.42.0.0/16 10.43.0.0/16"`
 
 ### Collecting more debug
 
