@@ -6,7 +6,8 @@ If you would like to help create new charts using the common library, there's
 a few tools you will need.
 
 - [helm](https://helm.sh/docs/intro/install/)
-- [helm-docs](https://github.com/norwoodj/helm-docs)
+- Our custom version of [helm-docs](https://github.com/k8s-at-home/helm-docs)
+  (based on [helm-docs](https://github.com/norwoodj/helm-docs) by @norwoodj)
 - [Task](https://taskfile.dev) (optional)
 - [pre-commmit](https://pre-commit.com) (optional - required with tasks)
 
@@ -27,8 +28,7 @@ git clone https://github.com/k8s-at-home/charts.git
 cd charts
 
 task deps:install
-task chart:create CHART_TYPE=incubator CHART=chart-name
-# Don't forgot edit some chart informations in charts/incubator/chart-name/Chart.yaml and charts/chart-name/values.yaml
+task chart:create CHART_TYPE=stable CHART=chart-name
 ```
 
 Second, be sure to checkout the many charts that already use the common library like
@@ -36,22 +36,87 @@ Second, be sure to checkout the many charts that already use the common library 
 [node-red](https://github.com/k8s-at-home/charts/tree/master/charts/stable/node-red)
 or the many others in this repository.
 
-You will see which charts include this common chart as dependency:
+You can recognize which charts include this common chart as dependency by the following snippet:
 
 ```yaml
 # Chart.yaml
 ...
 dependencies:
 - name: common
-  version: 4.2.0 # make sure to use the latest common library version available
+  version: 4.3.0 # make sure to use the latest common library version available
   repository: https://library-charts.k8s-at-home.com
 ...
+```
+
+### Chart metadata
+
+In order to keep our chart documentation similar across all charts we rely heavily on template files.
+We use [helm-docs](https://github.com/k8s-at-home/helm-docs) to render these templates into the `README.md` file.
+
+Don't forgot to populate/update the chart information in `charts/stable/chart-name/Chart.yaml` and
+`charts/stable/chart-name/values.yaml` files.
+
+Aside from the default chart metadata (such as the `version`, `appVersion`, etc fields), we require a
+`artifacthub.io/changes` chart annotation
+(as documented by [ArtifactHUB](https://artifacthub.io/docs/topics/annotations/helm/))
+that describes the modifications in this chart version.
+
+```yaml
+# Chart.yaml
+...
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version
+...
+```
+
+!!! info
+    Because we rely so heavily on standardized templates, any manual changes to `README.md` will get overwriten
+    when the documentation is generated.
+
+    Any chart-specific documentation should go in the `README_CONFIG.md.gotmpl` file.
+
+!!! warning
+    Before submitting a PR, be sure to run `./hack/gen-helm-docs.sh stable chart-name` so that the `README.md` file
+    gets updated.
+
+    If you do not do this, chart linting might fail.
+
+## Testing
+
+When testing locally, make sure you update the dependencies with from the chart
+directory:
+
+```bash
+helm dependency update
+```
+
+If making local changes to the `common` library, the test chart may reference
+the local development chart:
+
+```yaml
+# common-test/Chart.yaml
+...
+dependencies:
+- name: common
+  version: <new version>
+  repository: file://.../common
+...
+```
+
+Be sure to lint your chart to check for any errors.
+
+```sh
+# Linting
+task chart:lint CHART_TYPE=stable CHART=chart-name
+task chart:ct-lint CHART_TYPE=stable CHART=chart-name
 ```
 
 ## Values
 
 Edit `values.yaml` with some basic defaults you want to present to the user.
-Please ensure you anotate them with [helm-docs](https://github.com/norwoodj/helm-docs)
+Please ensure you anotate them with [helm-docs](https://github.com/k8s-at-home/helm-docs)
 e.g.
 
 ```yaml
@@ -157,35 +222,5 @@ volumeSpec:
 ```
 
 An actual example of this can be found in the [zigbee2mqtt][zigbee2mqtt] chart.
-
-### Testing
-
-If testing locally, make sure you update the dependencies with from the chart
-directory:
-
-```bash
-helm dependency update
-```
-
-If making local changes to the `common` library, the test chart may reference
-the local development chart:
-
-```yaml
-# common-test/Chart.yaml
-...
-dependencies:
-- name: common
-  version: <new version>
-  repository: file://.../common
-...
-```
-
-Be sure to lint your chart to check for any errors.
-
-```sh
-# Linting
-task chart:lint CHART_TYPE=incubator CHART=chart-name
-task chart:ct-lint CHART_TYPE=incubator CHART=chart-name
-```
 
 [zigbee2mqtt]: https://github.com/k8s-at-home/charts/tree/master/charts/stable/zigbee2mqtt
