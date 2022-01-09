@@ -30,7 +30,7 @@ manifests on the fly.
 | `readOnly`      | No        | Specify if the volume should be mounted read-only.                                    |
 | `nameOverride`  | No        | Override the name suffix that is used for this volume.                                |
 | `storageClass`  | No        | Storage class to use for this volume.                                                 |
-| `skipuninstall` | No        | Set to true to retain the PVC upon `helm uninstall`.                                  |
+| `retain`        | No        | Set to true to retain the PVC upon `helm uninstall`.                                  |
 
 Minimal config:
 
