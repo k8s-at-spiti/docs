@@ -6,8 +6,6 @@ If you would like to help create new charts using the common library, there's
 a few tools you will need.
 
 - [helm](https://helm.sh/docs/intro/install/)
-- Our custom version of [helm-docs](https://github.com/k8s-at-home/helm-docs)
-  (based on [helm-docs](https://github.com/norwoodj/helm-docs) by @norwoodj)
 - [Task](https://taskfile.dev) (optional)
 - [pre-commmit](https://pre-commit.com) (optional - required with tasks)
 
@@ -76,12 +74,6 @@ annotations:
     when the documentation is generated.
 
     Any chart-specific documentation should go in the `README_CONFIG.md.gotmpl` file.
-
-!!! warning
-    Before submitting a PR, be sure to run `./hack/gen-helm-docs.sh stable chart-name` so that the `README.md` file
-    gets updated.
-
-    If you do not do this, chart linting might fail.
 
 ## Testing
 
