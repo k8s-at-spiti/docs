@@ -77,7 +77,7 @@ annotations:
 
 ## Testing
 
-When testing locally, make sure you update the dependencies with from the chart
+When testing locally, make sure you update the dependencies from within the chart
 directory:
 
 ```bash
