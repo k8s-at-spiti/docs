@@ -185,6 +185,36 @@ persistence:
 
 This will mount the contents of the pre-existing `mySecret` Secret to `/config`.
 
+##### NFS Volume
+
+To mount an NFS share to your Pod you can either pre-create a persistentVolumeClaim
+referring to it, or you can specify an inline NFS volume:
+
+!!! note
+    Mounting an NFS share this way does not allow for specifying mount options.
+    If you require these, you must create a PVC to mount the share.
+
+| Field           | Mandatory | Docs / Description                                                                                                 |
+| --------------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
+| `enabled`       | Yes       |                                                                                                                    |
+| `type`          | Yes       |                                                                                                                    |
+| `server`        | Yes       | Host name or IP address of the NFS server.                                                                         |
+| `path`          | YES       | The path on the server to mount.                                                                                   |
+| `readOnly`      | No        | Explicitly specify if the volume should be mounted read-only. Even if not specified, the Secret will be read-only. |
+
+Minimal config:
+
+```yaml
+persistence:
+  config:
+    enabled: true
+    type: nfs
+    server: 10.10.0.8
+    path: /tank/nas/library
+```
+
+This will mount the NFS share `/tank/nas/library` on server `10.10.0.8` to `/config`.
+
 ### Custom
 
 When you wish to specify a custom volume, you can use the `custom` type.
@@ -201,32 +231,6 @@ for more information.
 | `mountPath`     | No        | Where to mount the volume in the main container. Defaults to the value of `hostPath`. |
 | `readOnly`      | No        | Specify if the volume should be mounted read-only.                                    |
 | `nameOverride`  | No        | Override the name suffix that is used for this volume.                                |
-
-#### Examples
-
-##### NFS Volume
-
-To mount an NFS share to your Pod you can either pre-create a persistentVolumeClaim
-referring to it, or you can specify an inline NFS volume:
-
-!!! note
-    Mounting an NFS share this way does not allow for specifying mount options.
-    If you require these, you must create a PVC to mount the share.
-
-Minimal config:
-
-```yaml
-persistence:
-  config:
-    enabled: true
-    type: custom
-    volumeSpec:
-      nfs:
-        server: 10.10.0.8
-        path: /tank/nas/library
-```
-
-This will mount the NFS share `/tank/nas/library` on server `10.10.0.8` to `/config`.
 
 ## Permissions
 
