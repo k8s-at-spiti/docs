@@ -138,6 +138,7 @@ nav:
   - Guides:
       - DynDNS with a CronJob: guides/dyndns.md
       - Routing traffic through a VPN pod: guides/pod-gateway.md
+      - Updating Sonarr/Radarr with Recyclarr: guides/recyclarr.md
   - Support:
       - Community: support/community.md
       - FAQ: support/faq.md
