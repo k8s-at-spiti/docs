@@ -76,12 +76,12 @@ data.
 <!-- markdownlint-disable-next-line MD046 -->
 ```yaml
 initContainers:
-  update-volume-permission:
+  - name: update-volume-permission
     image: busybox
     command: ["sh", "-c", "chown -R 568:568 /config"]
     volumeMounts:
-    - name: config
-      mountPath: /config
+      - name: config
+        mountPath: /config
     securityContext:
       runAsUser: 0
 ```
