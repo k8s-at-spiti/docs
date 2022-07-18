@@ -11,10 +11,13 @@ Step one is to create a `configmap` based on the [documentation](https://github.
     This example is based on the default configuration. You will want to make changes
     based on the documentation above.
 
-If you are referencing the example below, replace the API keys with the keys for your installation. You can find them under `Settings > General`.
+If you are referencing the example below, replace the API keys with the keys for your installation. You can find them
+under `Settings > General`.
 
-You must also replace the base_url entries with urls that are reachable from the pod that the cronjob will create. This is actually pretty easy. If you are running Sonarr or Radarr inside the same cluster as Recyclarr, you should be able
-to use the addresses in the examples by replacing `default` with the correct namespace. If you aren't sure of the exact naming, `kubectl get services -A` will list all of the services in the cluster. And don't forget the port!
+You must also replace the base_url entries with urls that are reachable from the pod that the cronjob will create. This
+is actually pretty easy. If you are running Sonarr or Radarr inside the same cluster as Recyclarr, you should be able
+to use the addresses in the examples by replacing `default` with the correct namespace. If you aren't sure of the exact
+naming, `kubectl get services -A` will list all of the services in the cluster. And don't forget the port!
 
 ```yaml
 # configmap.yaml

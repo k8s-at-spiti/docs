@@ -50,4 +50,5 @@ It will be private so you will need to ask a community mainteiner to make it pub
 Check the following examples of code projects:
 
 - [dnsmadeeasy-webhook](https://github.com/k8s-at-home/dnsmadeeasy-webhook)
-- [dynamic-ip-controller](https://github.com/k8s-at-home/dynamic-ip-controller)
+- [gateway-admision-controller](https://github.com/k8s-at-home/gateway-admision-controller)
+- [pod-gateway](https://github.com/k8s-at-home/pod-gateway)

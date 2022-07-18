@@ -185,7 +185,7 @@ persistence:
 
 This will mount the contents of the pre-existing `mySecret` Secret to `/config`.
 
-##### NFS Volume
+### NFS Volume
 
 To mount an NFS share to your Pod you can either pre-create a persistentVolumeClaim
 referring to it, or you can specify an inline NFS volume:
@@ -199,7 +199,7 @@ referring to it, or you can specify an inline NFS volume:
 | `enabled`       | Yes       |                                                                                                                    |
 | `type`          | Yes       |                                                                                                                    |
 | `server`        | Yes       | Host name or IP address of the NFS server.                                                                         |
-| `path`          | YES       | The path on the server to mount.                                                                                   |
+| `path`          | Yes       | The path on the server to mount.                                                                                   |
 | `readOnly`      | No        | Explicitly specify if the volume should be mounted read-only. Even if not specified, the Secret will be read-only. |
 
 Minimal config:

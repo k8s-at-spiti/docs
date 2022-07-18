@@ -40,8 +40,8 @@ tasks:
     desc: Run markdownlint-cli
     cmds:
       - >-
-        docker run --rm -it -v ${PWD}:/markdown:ro
-        06kellyjac/markdownlint-cli .
+        docker run --rm -it -v ${PWD}:${PWD}:ro -w ${PWD}
+        ghcr.io/igorshubovych/markdownlint-cli .
 
   yamllint:
     desc: Run yamllint

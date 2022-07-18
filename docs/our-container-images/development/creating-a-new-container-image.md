@@ -40,9 +40,7 @@ See [Dockerfile](./dockerfile.md).
 
 ### PLATFORM
 
-The `PLATFORM` file is used by the
-[Apps - Build, Test, Push github action][apps.yaml] to build
-[multi-platform] container images.
+The `PLATFORM` file is used by the to build [multi-platform] container images.
 
 At a minimum, the following platforms should be supported by the container
 image:
@@ -56,12 +54,11 @@ linux/amd64,linux/arm64
 
 ### VERSION
 
-The `VERSION` file is used by the
-[Apps - Build, Test, Push github action][apps.yaml] to determine the version
-of the app with which to build the container image.
+The `VERSION` file is used by to determine the version of the app with which
+to build the container image.
 
 The VERSION file may be updated manually by running the
-[latest-version.sh](#latest-version.sh) script.
+[latest-version.sh](#latest-versionsh) script.
 
 ```shell
 ./latest-version.sh > VERSION
@@ -100,9 +97,8 @@ exec /app/foo ${EXTRA_ARGS}
 
 ### goss.yaml
 
-The `goss.yaml` file is used by the
-[Apps - Build, Test, Push github action][apps.yaml] to perform a health
-check on the container image using [goss](https://github.com/aelsabbahy/goss).
+The `goss.yaml` file is used to perform a health check on the container image
+using [goss][goss].
 
 Be sure to update the process name, port number(s) and `title`.
 
@@ -127,10 +123,9 @@ http:
 
 ### latest-version.sh
 
-The `latest-version.sh` script is used by the
-[Apps - Get latest versions github action][apps-schedule.yaml] to get the
-latest version of the app. This script is custom for each app and so it will
-need to be developed for each app. Below is an example of one.
+The `latest-version.sh` script is used to get the latest version of the app.
+This script is custom for each app and so it will need to be developed for
+each app. Below is an example of one.
 
 ```bash
 #!/usr/bin/env bash
@@ -163,11 +158,7 @@ See [plex] for reference.
 [base image shim scripts]: ./base-images.md#shim-scripts
 [goss]: https://github.com/aelsabbahy/goss
 [dgoss]: https://github.com/aelsabbahy/goss/tree/master/extras/dgoss
-[apps-schedule.yaml]: https://github.com/k8s-at-home/container-images/actions/workflows/apps-schedule.yaml
-[apps.yaml]: https://github.com/k8s-at-home/container-images/actions/workflows/apps.yaml
 [manual]: https://github.com/aelsabbahy/goss/blob/master/docs/manual.md
 [multi-platform]: https://docs.docker.com/buildx/working-with-buildx/#build-multi-platform-images
 [entrypoint.sh]: https://docs.docker.com/engine/reference/builder/#entrypoint
-[dockerfile]: https://docs.docker.com/engine/reference/builder/
-[from]: https://docs.docker.com/engine/reference/builder/#from
 [plex]: https://github.com/k8s-at-home/container-images/tree/main/apps/plex
