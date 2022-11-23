@@ -1,6 +1,6 @@
 # Configuration
 
-The following configuration is available across all the k8s@home container images.
+The following configuration is available across all the k8s@spiti container images.
 
 ## Environment Variables
 

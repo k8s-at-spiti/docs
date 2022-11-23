@@ -1,6 +1,6 @@
 # Welcome
 
-Welcome to the documentation for [k8s@home](https://github.com/k8s-at-home)
+Welcome to the documentation for [k8s@spiti](https://github.com/k8s-at-spiti)
 which aims to support running [Kubernetes](https://kubernetes.io/) at home.
 
 ## Features
@@ -18,15 +18,10 @@ which aims to support running [Kubernetes](https://kubernetes.io/) at home.
 ### Repository topics
 
 Have a look at people running Kubernetes at home
-[on GitHub](https://github.com/topics/k8s-at-home?o=desc&s=updated) and
+[on GitHub](https://github.com/topics/k8s-at-spiti?o=desc&s=updated) and
 <!-- Disable link check because it requires login -->
 <!-- markdown-link-check-disable-next-line -->
-[on GitLab](https://gitlab.com/search?search=k8s-at-home).
-
-### Awesome Home Kubernetes
-
-[Checkout](https://github.com/k8s-at-home/awesome-home-kubernetes) our curation
-of projects and resources involving running Kubernetes at home.
+[on GitLab](https://gitlab.com/search?search=k8s-at-spiti).
 
 ## License
 

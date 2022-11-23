@@ -78,7 +78,7 @@ required tools. This step only needs to be done once. To build the container,
 run this command in your shell:
 
 ```sh
-docker build -t k8s-at-home/charts-unit-test -f .devcontainer/Dockerfile .
+docker build -t k8s-at-spiti/charts-unit-test -f .devcontainer/Dockerfile .
 ```
 
 When you wish to run the tests, run this command in your shell:
@@ -86,7 +86,7 @@ When you wish to run the tests, run this command in your shell:
 ```sh
 docker run --rm -it -l \
   -v $(pwd):/charts --entrypoint "/bin/bash" \
-  -w /charts k8s-at-home/charts-unit-test \
+  -w /charts k8s-at-spiti/charts-unit-test \
   -c "go mod download && go test ./charts/.../tests"
 ```
 
@@ -102,5 +102,5 @@ This will create a container with the charts repo root folder mounted to
 A successful test will output something like the following...
 
 ```text
-ok    github.com/k8s-at-home/library-charts/charts/stable/common/tests  54.087s
+ok    github.com/k8s-at-spiti/library-charts/charts/stable/common/tests  54.087s
 ```

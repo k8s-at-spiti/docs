@@ -22,7 +22,7 @@ more information on how to install it.
 To create a new chart, run the following:
 
 ```sh
-git clone https://github.com/k8s-at-home/charts.git
+git clone https://github.com/k8s-at-spiti/charts.git
 cd charts
 
 task deps:install
@@ -30,8 +30,8 @@ task chart:create CHART_TYPE=stable CHART=chart-name
 ```
 
 Second, be sure to checkout the many charts that already use the common library like
-[qBittorrent](https://github.com/k8s-at-home/charts/tree/master/charts/stable/qbittorrent),
-[node-red](https://github.com/k8s-at-home/charts/tree/master/charts/stable/node-red)
+[qBittorrent](https://github.com/k8s-at-spiti/charts/tree/master/charts/stable/qbittorrent),
+[node-red](https://github.com/k8s-at-spiti/charts/tree/master/charts/stable/node-red)
 or the many others in this repository.
 
 You can recognize which charts include this common chart as dependency by the following snippet:
@@ -42,7 +42,7 @@ You can recognize which charts include this common chart as dependency by the fo
 dependencies:
 - name: common
   version: 4.3.0 # make sure to use the latest common library version available
-  repository: https://library-charts.k8s-at-home.com
+  repository: https://library-charts.k8s-at-spiti.com
 ...
 ```
 
@@ -116,7 +116,7 @@ e.g.
 # IMPORTANT NOTE
 #
 # This chart inherits from our common library chart. You can check the default values/options here:
-# https://github.com/k8s-at-home/library-charts/tree/master/charts/stable/common/values.yaml
+# https://github.com/k8s-at-spiti/library-charts/tree/master/charts/stable/common/values.yaml
 #
 
 image:
@@ -215,4 +215,4 @@ volumeSpec:
 
 An actual example of this can be found in the [zigbee2mqtt][zigbee2mqtt] chart.
 
-[zigbee2mqtt]: https://github.com/k8s-at-home/charts/tree/master/charts/stable/zigbee2mqtt
+[zigbee2mqtt]: https://github.com/k8s-at-spiti/charts/tree/master/charts/stable/zigbee2mqtt

@@ -1,21 +1,21 @@
 ---
 
 # Project information
-site_name: k8s@home | Docs
-site_description: Docs for the k8s@home community
-site_author: The k8s@home project
-site_url: https://docs.k8s-at-home.com
+site_name: k8s@spiti | Docs
+site_description: Docs for the k8s@spiti community
+site_author: The k8s@spiti project
+site_url: https://docs.k8s-at-spiti.com
 
 # Repository
-repo_name: k8s-at-home/docs
-repo_url: https://github.com/k8s-at-home/docs
+repo_name: k8s-at-spiti/docs
+repo_url: https://github.com/k8s-at-spiti/docs
 edit_uri: ""
 
 # Configuration
 theme:
   name: material
-  logo: https://raw.githubusercontent.com/k8s-at-home/organization/main/logo/k8s-at-home-32.png
-  favicon: https://raw.githubusercontent.com/k8s-at-home/organization/main/logo/k8s-at-home-32.png
+  logo: https://raw.githubusercontent.com/k8s-at-spiti/organization/main/logo/k8s-at-home-32.png
+  favicon: https://raw.githubusercontent.com/k8s-at-spiti/organization/main/logo/k8s-at-home-32.png
   icon:
     repo: fontawesome/brands/github-alt
   language: en
@@ -62,7 +62,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/k8s-at-home
+      link: https://github.com/k8s-at-spiti
     - icon: fontawesome/brands/discord
       link: https://discord.gg/sTMX7Vh
     - icon: fontawesome/brands/twitter
@@ -94,7 +94,7 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: k8s-at-home
+      user: k8s-at-spiti
       repo: docs
   - pymdownx.mark
   - pymdownx.smartsymbols

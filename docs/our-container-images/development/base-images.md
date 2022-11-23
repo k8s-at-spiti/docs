@@ -1,6 +1,6 @@
 # Base images
 
-The k8s@home base images are meant to be used as an image to build
+The k8s@spiti base images are meant to be used as an image to build
 all other app container images on top of.
 
 ## Distributions
@@ -42,9 +42,9 @@ image possible while still waiting for a child to exit all the while
 reaping zombies and performing signal forwarding.
 
 <!-- markdown-link-check-disable -->
-[ubuntu]: https://github.com/k8s-at-home/container-images/pkgs/container/ubuntu
-[alpine]: https://github.com/k8s-at-home/container-images/pkgs/container/alpine
+[ubuntu]: https://github.com/k8s-at-spiti/container-images/pkgs/container/ubuntu
+[alpine]: https://github.com/k8s-at-spiti/container-images/pkgs/container/alpine
 <!-- markdown-link-check-enable -->
-[here]: https://github.com/k8s-at-home/container-images/tree/main/base
+[here]: https://github.com/k8s-at-spiti/container-images/tree/main/base
 [tini]: https://github.com/krallin/tini/
 [entrypoint.sh]: ./creating-a-new-container-image.md#entrypointsh
