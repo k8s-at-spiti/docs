@@ -57,9 +57,9 @@ The Wireguard add-on enables you to force all (or selected) network traffic
 through a VPN.
 
 This example shows how to add a Wireguard sidecar to our
-[qBittorrent Helm chart](https://github.com/k8s-at-home/charts/tree/master/charts/stable/qbittorrent).
+[qBittorrent Helm chart](https://github.com/k8s-at-spiti/charts/tree/master/charts/stable/qbittorrent).
 It does not cover all of the configuration possibilities of the
-[Wireguard client image](https://github.com/k8s-at-home/container-images/tree/main/apps/wireguard),
+[Wireguard client image](https://github.com/k8s-at-spiti/container-images/tree/main/apps/wireguard),
 but should give a good starting point for configuring a similar setup.
 
 ### Example values
@@ -69,7 +69,7 @@ container with **all** its traffic routed through a VPN. In order to have
 functioning ingress and/or probes, it might be required to open certain
 networks or ports on the VPN firewall. That is beyond the scope of this
 document. Please refer to the
-[Wireguard client image](https://github.com/k8s-at-home/container-images/tree/main/apps/wireguard)
+[Wireguard client image](https://github.com/k8s-at-spiti/container-images/tree/main/apps/wireguard)
 for more details on these environment variables.
 
 !!! note
@@ -154,7 +154,7 @@ Similar to the Wireguard VPN, the OpenVPN add-on enables you to force all
 (or selected) network traffic through a VPN.
 
 This example shows how to add an OpenVPN sidecar to our
-[qBittorrent Helm chart](https://github.com/k8s-at-home/charts/tree/master/charts/stable/qbittorrent).
+[qBittorrent Helm chart](https://github.com/k8s-at-spiti/charts/tree/master/charts/stable/qbittorrent).
 It does not cover all of the configuration possibilities of the
 [OpenVPN client image](https://github.com/dperson/openvpn-client) by
 [@dperson](https://github.com/dperson), but should give a good starting point
