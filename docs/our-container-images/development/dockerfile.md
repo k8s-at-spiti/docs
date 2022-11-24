@@ -5,21 +5,21 @@ additions.
 
 ## Base images
 
-Be sure to use one of the [base k8s@home images](./base-images.md) for the
+Be sure to use one of the [base k8s@spiti images](./base-images.md) for the
 [FROM][from] instruction.
 
 ### Ubuntu
 
 ```Docker
 # hadolint ignore=DL3007
-FROM ghcr.io/k8s-at-home/ubuntu:latest
+FROM ghcr.io/k8s-at-spiti/ubuntu:latest
 ```
 
 ### Alpine
 
 ```Docker
 # hadolint ignore=DL3007
-FROM ghcr.io/k8s-at-home/alpine:latest
+FROM ghcr.io/k8s-at-spiti/alpine:latest
 ```
 
 ## package_info
@@ -28,7 +28,7 @@ Also, be sure to add the `package_info` file to the image so that others can
 find the source of the container image.
 
 ```Docker
-RUN printf "UpdateMethod=docker\nPackageVersion=%s\nPackageAuthor=[Team k8s-at-home](https://github.com/k8s-at-home)" "${VERSION}" > /app/package_info
+RUN printf "UpdateMethod=docker\nPackageVersion=%s\nPackageAuthor=[Team k8s-at-spiti](https://github.com/k8s-at-spiti)" "${VERSION}" > /app/package_info
 ```
 
 ## UMASK and ca-certificates
@@ -92,4 +92,4 @@ container image size.
 [copy]: https://docs.docker.com/engine/reference/builder/#copy
 [best practices]: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 [hadolint]: https://github.com/hadolint/hadolint
-[apps.yaml]: https://github.com/k8s-at-home/container-images/actions/workflows/apps.yaml
+[apps.yaml]: https://github.com/k8s-at-spiti/container-images/actions/workflows/apps.yaml

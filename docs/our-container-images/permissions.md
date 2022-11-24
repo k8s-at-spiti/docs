@@ -20,7 +20,7 @@ You can change the Kubernetes
 [Security Contexts](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 to allow the container to have permissions to write to your file storage.
 
-In our [Helm charts](https://github.com/k8s-at-home/charts/) this can be accomplished
+In our [Helm charts](https://github.com/k8s-at-spiti/charts/) this can be accomplished
 by setting the following option in you Helm values.
 
 !!! note

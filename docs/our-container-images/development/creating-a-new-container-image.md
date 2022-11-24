@@ -161,4 +161,4 @@ See [plex] for reference.
 [manual]: https://github.com/aelsabbahy/goss/blob/master/docs/manual.md
 [multi-platform]: https://docs.docker.com/buildx/working-with-buildx/#build-multi-platform-images
 [entrypoint.sh]: https://docs.docker.com/engine/reference/builder/#entrypoint
-[plex]: https://github.com/k8s-at-home/container-images/tree/main/apps/plex
+[plex]: https://github.com/k8s-at-spiti/container-images/tree/main/apps/plex

@@ -285,4 +285,4 @@ persistence:
         mountPath: /downloads
 ```
 
-[permissions]: http://docs.k8s-at-home.com/our-container-images/permissions/
+[permissions]: http://docs.k8s-at-spiti.com/our-container-images/permissions/

@@ -7,12 +7,12 @@ Refer to Helm's [documentation](https://helm.sh/docs/) to get started.
 ## Installation
 
 ```sh
-helm repo add k8s-at-home https://k8s-at-home.com/charts/
+helm repo add k8s-at-spiti https://k8s-at-spiti.com/charts/
 ```
 
-You can then run `helm search repo k8s-at-home` to see the charts.
+You can then run `helm search repo k8s-at-spiti` to see the charts.
 
 ## Charts
 
-See [Artifact Hub](https://artifacthub.io/packages/search?org=k8s-at-home) for
+See [Artifact Hub](https://artifacthub.io/packages/search?org=k8s-at-spiti) for
 a complete list.

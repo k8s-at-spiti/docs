@@ -32,7 +32,7 @@ metadata:
 ### pod-gateway Helm release
 
 You need to deploy the
-[pod-gateway](https://github.com/k8s-at-home/charts/tree/master/charts/stable/pod-gateway)
+[pod-gateway](https://github.com/k8s-at-spiti/charts/tree/master/charts/stable/pod-gateway)
 helm chart. Assuming you use GitOps to deploy the routed pods, you might
 use the following template to deploy the gateway pod:
 
@@ -49,16 +49,16 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      # renovate: registryUrl=https://k8s-at-spiti.com/charts/
       chart: pod-gateway
       version: 2.0.0
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: k8s-at-spiti-charts
         namespace: flux-system
       interval: 5m
 
-  # See https://github.com/k8s-at-home/charts/blob/master/charts/pod-gateway/values.yaml
+  # See https://github.com/k8s-at-spiti/charts/blob/master/charts/pod-gateway/values.yaml
   values:
     routed_namespaces:
     - vpn
@@ -261,7 +261,7 @@ This is specially useful if you need to expose PODs to the Internet through the
 VPN server. For example, you can expose the torrent port or a web server.
 
 You need to ensure the exposed routed pod has a static name. If you use the
-k8s-at-home charts, this is done by setting the `hostname` value:
+k8s-at-spiti charts, this is done by setting the `hostname` value:
 
 ```yaml
 # HelmRelease.yaml
@@ -378,6 +378,6 @@ Collect the following information from the routed and gateway pods:
 - `ping -c1 example.com`
 
 You can compare with the output of the deployment example above. If you are not able
-to tell what the problem is you might [open an issue](https://github.com/k8s-at-home/charts/issues/new/choose)
+to tell what the problem is you might [open an issue](https://github.com/k8s-at-spiti/charts/issues/new/choose)
 for chart `pod-gateway`. Please attach there the connectivity test results and the
 additional debug information.

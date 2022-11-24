@@ -74,4 +74,4 @@ influxdb:
     enabled: false
 ```
 
-[home-assistant]: https://github.com/k8s-at-home/charts/tree/master/charts/stable/home-assistant
+[home-assistant]: https://github.com/k8s-at-spiti/charts/tree/master/charts/stable/home-assistant

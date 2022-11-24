@@ -16,7 +16,7 @@ Create a new GitHub project using
 [this template](https://github.com/k8s-at-home/template-container-image)
 as reference.
 
-If you create this project under [k8s-at-home](https://github.com/k8s-at-home)
+If you create this project under [k8s-at-spiti](https://github.com/k8s-at-spiti)
 then you are ready to start coding. If this is not the case you will need to
 create required GitHub secrets as described in the
 [template README](https://github.com/k8s-at-home/template-container-image/blob/main/README.md).
@@ -42,13 +42,15 @@ Makefile.
 
 After you upload your changes to GitHub the CI workflow action should be invoqued
 automatically. If it runs sucesfully your container should not be uploaded to
-[GHCR](https://github.com/orgs/k8s-at-home/packages?ecosystem=container).
+[GHCR](https://github.com/orgs/k8s-at-spiti/packages?ecosystem=container).
 It will be private so you will need to ask a community mainteiner to make it public.
 
 ## References
 
 Check the following examples of code projects:
 
-- [dnsmadeeasy-webhook](https://github.com/k8s-at-home/dnsmadeeasy-webhook)
-- [gateway-admision-controller](https://github.com/k8s-at-home/gateway-admision-controller)
-- [pod-gateway](https://github.com/k8s-at-home/pod-gateway)
+<!--
+- [dnsmadeeasy-webhook](https://github.com/k8s-at-spiti/dnsmadeeasy-webhook)
+- [gateway-admision-controller](https://github.com/k8s-at-spiti/gateway-admision-controller)
+- [pod-gateway](https://github.com/k8s-at-spiti/pod-gateway)
+-->
